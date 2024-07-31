@@ -22,27 +22,26 @@
 
   :root {
     /* --font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; */
-    --font-family: "源ノ明朝", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    /* --font-family: "源ノ明朝", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; */
+    --font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     --border: dashed 2px rgba(127, 127, 127, 0.5);
+    --line-color: #695827;
+    --nav-color: #695827;
   }
 
   body {
     display: grid;
-    font-family: var(--font-family);
+    margin: 0;
+    padding: 0 10px;
+    place-content: center;
 
-    /* https://coliss.com/articles/build-websites/operation/css/css-responsive-full-background-image-by-sixrevisions.html#:~:text=%E8%83%8C%E6%99%AF%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB%E3%80%81body%E3%81%AB%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%BE%E3%81%99%E3%80%82 */
-    /* background-image: url(images/bg.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #464646; */
+    font-family: var(--font-family);
     background-color: rgb(255, 255, 255);
   }
   section {
     padding: 20px 0px;
   }
-  ul {
+  /* ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -50,29 +49,58 @@
   li {
     margin: 0;
     padding: 0;
-  }
+  } */
   pre {
     margin: 0;
     padding: 0;
   }
   nav {
+    display: grid;
+    justify-content: right;
+    font-family: 'Helvetica', '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+    font-size: 14px;
+
     ul {
-      overflow: hidden;
-      list-style: none;
+      padding: 0;
       margin: 0 auto;
+      list-style: none;
+      /* border-bottom: solid 2px var(--line-color); */
+      overflow: hidden;
 
       li {
         display: inline-block;
-        padding: 26px 10px 20px 10px
+        padding: 8px 10px
       }
     }
   }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:link {
+    color: var(--nav-color);
+  }
+  a:visited {
+    color: var(--nav-color);
+    text-decoration: underline;
+  }
 
-  .title-text {
-    /* color: #515151; */
-    color: black;
-    font-size: 30px;
-    padding: 16px 0;
+  .title-box {
+    position: relative;
+    > .text {
+      /* color: #515151; */
+      color: black;
+      font-size: 30px;
+      padding: 16px 0;
+    }
+    > .line {
+      position: absolute;
+      bottom: 18px;
+      width: 200px;
+      border-bottom: solid 2px var(--line-color);
+    }
   }
   .detail-text {
     color: #7d7d7d;
@@ -120,6 +148,83 @@
       /* border: var(--border); */
     }
   }
+  #logo {
+    height: 300px;
+
+    > img {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    > h2 {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      color: white;
+    }
+  }
+  #aboutme {
+    display: grid;
+    position: relative;
+    grid-auto-flow: column;
+    gap: 40px;
+    /* grid-auto-rows: 320px; */
+    /* width: 100%; */
+    /* width: 300px; */
+    place-content: center;
+    color: #040404;
+
+    > img {
+      aspect-ratio: 585 / 624;
+      height: 420px;
+      /* height: 100%; */
+      object-fit: cover;
+      padding: 8px;
+      border: solid 2px var(--line-color);
+      /* border-radius: 20px; */
+      box-sizing: border-box;
+    }
+
+    > .profile {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, auto);
+      grid-auto-flow: row;
+
+      .name {
+        font-size: 30px;
+        margin: auto;
+        justify-items: center;
+      }
+
+      .line {
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        border-bottom: solid 2px var(--line-color);
+      }
+
+      ul {
+        padding: 10px;
+      }
+      .icon {
+        width: 32px;
+        justify-items: center;
+      }
+    }
+  }
+
+  #promotion {
+    > .detail-text {
+      max-width: 800px;
+      color: #7d7d7d;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0 auto;
+    }
+  }
 </style>
 
 <body>
@@ -136,18 +241,37 @@
     </nav>
   </header>
 
+  <div id="logo">
+    <img src="images/yama.jpg">
+  </div>
+
   <section id="aboutme">
-    <!-- <div class="title-text">ABOUT ME</div>
-    <div class="detail-text">
-      はじめまして。クライアントエンジニアの新垣 颯です。
-      ゲームの専門学校を卒業後、11年エンジニアとして働いてきました。
-      このサイトは自身をPRするためのポートフォリオです。
-    </div> -->
-    <h2 class="single-center">arakaki portfolio</h2>
+    <img src="images/me.jpg">
+    <div class="profile">
+      <div class="name">Arakaki Hayate</div>
+      <div class="line"></div>
+      <ul>
+        <li>沖縄出身 32歳</li>
+        <li>クライアントエンジニア (ゲームプログラマ)</li>
+        <li>趣味</li>
+        <ul>
+          <li>登山</li>
+          <li>散歩</li>
+          <li>コメダコーヒー</li>
+        </ul>
+      </ul>
+      <div class="icons">
+        <a href="https://github.com/arakaki-asdf"><img class="icon" src="images/github.svg"></a>
+        <a href="https://note.com/agile_bonobo9370/"><img class="icon" src="images/note.svg"></a>
+      </div>
+    </div>
   </section>
 
   <section id="skills">
-    <div class="title-text">SKILLS</div>
+    <div class="title-box">
+      <div class="text">SKILLS</div>
+      <div class="line"></div>
+    </div>
     <div class="skills">
       <div class="skill detail-text">JavaScript</div>
       <div class="skill detail-text">jQuery<br>vue.js</div>
@@ -160,7 +284,11 @@
   </section>
 
   <section id="promotion">
-    <div class="title-text">PROMOTION</div>
+    <div class="title-box">
+      <div class="text">PROMOTION</div>
+      <div class="line"></div>
+    </div>
+
     <div class="detail-text">
       過去 私はプログラマとして設計、開発、運用やツール作成などの業務を行ってきました。
       特にコードの設計を重視しており、読みやすく、シンプルな設計になるようリファクタリングを試みております。その他に業務での 効率化のために自動化やメタプログラミングによるコード生成にも関心があります。
@@ -175,7 +303,11 @@
   </section>
 
   <section id="history">
-    <div class="title-text">HISTORY</div>
+    <div class="title-box">
+      <div class="text">HISTORY</div>
+      <div class="line"></div>
+    </div>
+
     <pre class="detail-text">
       - 2011/3  沖縄県立読谷高等学校 卒業
       - 2011/4  東京ゲームデザイナー学院 ゲームクリエイター科 入学
