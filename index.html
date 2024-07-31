@@ -1,0 +1,198 @@
+<!--
+  参考URL
+  https://flat-goto-7145.zombie.jp/portfolio/
+  https://coliss.com/articles/build-websites/operation/css/css-grid-cheat-sheets.html
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arakaki hayate Portfolio</title>
+</head>
+
+<style>
+  /* https://yori3.com/trying/%E3%80%90web%E3%83%A1%E3%83%A2%E3%80%91%E6%BA%90%E3%83%8E%E6%98%8E%E6%9C%9D%E3%82%92web%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E3%81%A7%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E3%82%B3%E3%83%84/ */
+  @font-face {
+    font-family: "源ノ明朝";
+    src: url("font/SourceHanSerif-Regular.otf") format("opentype");
+  }
+  /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap'); */
+
+  :root {
+    /* --font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; */
+    --font-family: "源ノ明朝", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    --border: dashed 2px rgba(127, 127, 127, 0.5);
+  }
+
+  body {
+    display: grid;
+    font-family: var(--font-family);
+
+    /* https://coliss.com/articles/build-websites/operation/css/css-responsive-full-background-image-by-sixrevisions.html#:~:text=%E8%83%8C%E6%99%AF%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB%E3%80%81body%E3%81%AB%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%97%E3%81%BE%E3%81%99%E3%80%82 */
+    /* background-image: url(images/bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646; */
+    background-color: rgb(255, 255, 255);
+  }
+  section {
+    padding: 20px 0px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  pre {
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    ul {
+      overflow: hidden;
+      list-style: none;
+      margin: 0 auto;
+
+      li {
+        display: inline-block;
+        padding: 26px 10px 20px 10px
+      }
+    }
+  }
+
+  .title-text {
+    /* color: #515151; */
+    color: black;
+    font-size: 30px;
+    padding: 16px 0;
+  }
+  .detail-text {
+    color: #7d7d7d;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .faintly-text {
+    color: #D3D3D3;
+  }
+  .single-center {
+    display: grid;
+    place-content: center;
+  }
+  .space {
+    display: block;
+    height: 20px;
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    gap: 20px 20px;
+    grid-auto-rows: 100px;
+    /* grid-auto-columns: 100px; */
+    /* justify-items: center; */
+    /* align-items: center; */
+    justify-content: center;
+
+    .skill {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      border: var(--border);
+    }
+  }
+
+  footer {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+
+    > .copyright {
+      display: inline-block;
+      margin-left: 12px;
+      font-size: 12px;
+      /* border: var(--border); */
+    }
+  }
+</style>
+
+<body>
+  <!-- メニューバー -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">TOP</a></li>
+        <li><a href="#aboutme">ABOUT ME</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#promotion">PROMOTION</a></li>
+        <li><a href="#history">HISTORY</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="aboutme">
+    <!-- <div class="title-text">ABOUT ME</div>
+    <div class="detail-text">
+      はじめまして。クライアントエンジニアの新垣 颯です。
+      ゲームの専門学校を卒業後、11年エンジニアとして働いてきました。
+      このサイトは自身をPRするためのポートフォリオです。
+    </div> -->
+    <h2 class="single-center">arakaki portfolio</h2>
+  </section>
+
+  <section id="skills">
+    <div class="title-text">SKILLS</div>
+    <div class="skills">
+      <div class="skill detail-text">JavaScript</div>
+      <div class="skill detail-text">jQuery<br>vue.js</div>
+      <div class="skill detail-text">C++<br>C#</div>
+      <div class="skill detail-text">git</div>
+      <div class="skill detail-text">php</div>
+      <div class="skill detail-text">figma</div>
+      <div class="skill detail-text">Unity</div>
+    </div>
+  </section>
+
+  <section id="promotion">
+    <div class="title-text">PROMOTION</div>
+    <div class="detail-text">
+      過去 私はプログラマとして設計、開発、運用やツール作成などの業務を行ってきました。
+      特にコードの設計を重視しており、読みやすく、シンプルな設計になるようリファクタリングを試みております。その他に業務での 効率化のために自動化やメタプログラミングによるコード生成にも関心があります。
+      <div class="space"></div>
+      実際に会社で手動で行っていた作業を自動化したことで、約三分の一ほど時間の短縮になりました。
+      さらに手動によるミスを防ぎ、誰でもワンクリックで実行できるようになりました。
+      <div class="space"></div>
+      効率化したことで単純作業を減らし、別の作業や新しいアイディアに費やす時間を増やし、よりクリエイティブな作業に集中でき るよう心がけております。
+      <div class="space"></div>
+      上記の文章を修正して、今までゲーム開発でプログラミングをしていた〜。webでのゲーム開発もあり、webの技術などに興味がある〜うんぬん..
+    </div>
+  </section>
+
+  <section id="history">
+    <div class="title-text">HISTORY</div>
+    <pre class="detail-text">
+      - 2011/3  沖縄県立読谷高等学校 卒業
+      - 2011/4  東京ゲームデザイナー学院 ゲームクリエイター科 入学
+      - 2013/3  東京ゲームデザイナー学院 ゲームクリエイター科 卒業
+      - 2013/4  有限会社ガイズウェア 入社 (後に株式会社に変更)
+      - 2019/5  株式会社ガイズウェア 退職
+      - 2019/7  株式会社Artisan 入社
+      - 2023/12 株式会社Artisan 退職
+      - 2024/1  VESTA株式会社 入社
+      - 2024/7  VESTA株式会社 退職
+    </pre>
+  </section>
+
+  <footer>
+    <a href="#">TOP</a>
+    <p class="copyright faintly-text">&copy; 2024 Arakaki Hayate </p>
+  </footer>
+</body>
+
+</html>
