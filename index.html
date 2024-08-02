@@ -10,316 +10,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>arakaki hayate Portfolio</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-<style>
-  /* https://yori3.com/trying/%E3%80%90web%E3%83%A1%E3%83%A2%E3%80%91%E6%BA%90%E3%83%8E%E6%98%8E%E6%9C%9D%E3%82%92web%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E3%81%A7%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E3%82%B3%E3%83%84/ */
-  @font-face {
-    font-family: "源ノ明朝";
-    src: url("font/SourceHanSerif-Regular.otf") format("opentype");
-  }
-  /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap'); */
-
-  :root {
-    /* --font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; */
-    /* --font-family: "源ノ明朝", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; */
-    --font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    --border: dashed 2px rgba(127, 127, 127, 0.5);
-    --line-color: #695827;
-    --nav-color: #695827;
-  }
-
-  body {
-    display: grid;
-    margin: 0;
-    padding: 0 10px;
-    place-content: center;
-
-    font-family: var(--font-family);
-    background-color: rgb(255, 255, 255);
-  }
-  section {
-    padding: 20px 0px;
-  }
-  /* ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    margin: 0;
-    padding: 0;
-  } */
-  pre {
-    margin: 0;
-    padding: 0;
-  }
-  nav {
-    display: grid;
-    justify-content: right;
-    font-family: 'Helvetica', '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
-    font-size: 14px;
-
-    ul {
-      padding: 0;
-      margin: 0 auto;
-      list-style: none;
-      /* border-bottom: solid 2px var(--line-color); */
-      overflow: hidden;
-
-      li {
-        display: inline-block;
-        padding: 8px 10px
-      }
-    }
-  }
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  a:link {
-    color: var(--nav-color);
-  }
-  a:visited {
-    color: var(--nav-color);
-    text-decoration: underline;
-  }
-
-  .title-box {
-    position: relative;
-    > .text {
-      /* color: #515151; */
-      color: black;
-      font-size: 30px;
-      padding: 16px 0;
-    }
-    > .line {
-      position: absolute;
-      bottom: 18px;
-      width: 200px;
-      border-bottom: solid 2px var(--line-color);
-    }
-  }
-  .detail-text {
-    color: #7d7d7d;
-    font-size: 14px;
-    font-weight: normal;
-  }
-  .faintly-text {
-    color: #D3D3D3;
-  }
-  .single-center {
-    display: grid;
-    place-content: center;
-  }
-  .space {
-    display: block;
-    height: 20px;
-  }
-  .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 100px);
-    gap: 20px 20px;
-    grid-auto-rows: 100px;
-    /* grid-auto-columns: 100px; */
-    /* justify-items: center; */
-    /* align-items: center; */
-    justify-content: center;
-
-    .skill {
-      display: grid;
-      justify-content: center;
-      align-items: center;
-      border: var(--border);
-    }
-  }
-
-  footer {
-    padding: 0;
-    margin: 0;
-    font-size: 12px;
-
-    > .copyright {
-      display: inline-block;
-      margin-left: 12px;
-      font-size: 12px;
-      /* border: var(--border); */
-    }
-  }
-  #logo {
-    height: 300px;
-
-    > img {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-
-    > h2 {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      color: white;
-    }
-  }
-  #aboutme {
-    display: grid;
-    position: relative;
-    grid-auto-flow: column;
-    gap: 40px;
-    /* grid-auto-rows: 320px; */
-    /* width: 100%; */
-    /* width: 300px; */
-    place-content: center;
-    color: #040404;
-
-    > img {
-      aspect-ratio: 585 / 624;
-      height: 420px;
-      /* height: 100%; */
-      object-fit: cover;
-      padding: 8px;
-      border: solid 2px var(--line-color);
-      /* border-radius: 20px; */
-      box-sizing: border-box;
-    }
-
-    > .profile {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, auto);
-      grid-auto-flow: row;
-
-      .name {
-        font-size: 30px;
-        margin: auto;
-        justify-items: center;
-      }
-
-      .line {
-        position: absolute;
-        top: 80px;
-        width: 100%;
-        border-bottom: solid 2px var(--line-color);
-      }
-
-      ul {
-        padding: 10px;
-      }
-      .icon {
-        width: 32px;
-        justify-items: center;
-      }
-    }
-  }
-
-  #promotion {
-    > .detail-text {
-      max-width: 800px;
-      color: #7d7d7d;
-      font-size: 14px;
-      font-weight: normal;
-      margin: 0 auto;
-    }
-  }
-</style>
-
 <body>
-  <!-- メニューバー -->
   <header>
     <nav>
-      <ul>
-        <li><a href="#">TOP</a></li>
-        <li><a href="#aboutme">ABOUT ME</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#promotion">PROMOTION</a></li>
-        <li><a href="#history">HISTORY</a></li>
-      </ul>
+      <a href="#production">PRODUCTION</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#promotion">PROMOTION</a>
+      <a href="#history">HISTORY</a>
     </nav>
   </header>
 
   <div id="logo">
-    <img src="images/yama.jpg">
+    <img src="images/inu.jpg" alt="">
   </div>
 
-  <section id="aboutme">
-    <img src="images/me.jpg">
-    <div class="profile">
-      <div class="name">Arakaki Hayate</div>
+  <div class="content">
+    <div class="title-box">
+      <div class="text">PROFILE</div>
       <div class="line"></div>
-      <ul>
-        <li>沖縄出身 32歳</li>
-        <li>クライアントエンジニア (ゲームプログラマ)</li>
-        <li>趣味</li>
-        <ul>
-          <li>登山</li>
-          <li>散歩</li>
-          <li>コメダコーヒー</li>
+    </div>
+    <section id="aboutme">
+      <img src="images/me.jpg">
+      <!-- <img src="https://placehold.jp/450x450.png"> -->
+      <div class="profile">
+        <!-- <div class="name">Arakaki Hayate</div>
+        <div class="line"></div> -->
+
+      <!-- <div class="title-box">
+        <div class="text">PROFILE</div>
+        <div class="line"></div>
+      </div> -->
+        <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum -->
+        <ul><li>新垣 颯(Arakaki Hayate)</li>
+          <li>沖縄出身 32歳</li>
+          <li>クライアントエンジニア (ゲームプログラマ)</li>
+          <li>趣味</li>
+          <ul>
+            <li>登山</li>
+            <li>散歩(モンスターハンターnow)</li>
+            <li>コメダ珈琲に通う</li>
+          </ul>
         </ul>
-      </ul>
-      <div class="icons">
-        <a href="https://github.com/arakaki-asdf"><img class="icon" src="images/github.svg"></a>
-        <a href="https://note.com/agile_bonobo9370/"><img class="icon" src="images/note.svg"></a>
+        <div class="icons">
+          <a href="https://github.com/arakaki-asdf"><img class="icon" src="images/github.svg"></a>
+          <a href="https://note.com/agile_bonobo9370/"><img class="icon" src="images/note.svg"></a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <div class="title-box">
-      <div class="text">SKILLS</div>
-      <div class="line"></div>
-    </div>
-    <div class="skills">
-      <div class="skill detail-text">JavaScript</div>
-      <div class="skill detail-text">jQuery<br>vue.js</div>
-      <div class="skill detail-text">C++<br>C#</div>
-      <div class="skill detail-text">git</div>
-      <div class="skill detail-text">php</div>
-      <div class="skill detail-text">figma</div>
-      <div class="skill detail-text">Unity</div>
-    </div>
-  </section>
+    <section id="production">
+      <div class="title-box">
+        <div class="text">PRODUCTION</div>
+        <div class="line"></div>
+      </div>
 
-  <section id="promotion">
-    <div class="title-box">
-      <div class="text">PROMOTION</div>
-      <div class="line"></div>
-    </div>
+      <div class="production">
+        <div class="item">
+          <div>ExcelAnalysis</div>
+          <!-- <img src="https://placehold.jp/200x200.png"> -->
+          <a href="#"><img src="images/excel-analysis.png"></a>
+          <div>C#</div>
+          <div>Excelからデータを解析し、JSON出力を行うツール</div>
+        </div>
+        <div class="item">
+          <div>cocos2d-x-shooting-tutorial</div>
+          <!-- <img src="https://placehold.jp/200x200.png"> -->
+          <a href="#"><img src="images/cocos-shooting.png"></a>
+          <div>C++</div>
+          <div>cocos2d-xを利用したシューティングゲームサンプル</div>
+        </div>
+        <div class="item">
+          <div>python japanese holiday</div>
+          <!-- <img src="https://placehold.jp/200x200.png"> -->
+          <a href="#"><img src="images/python-japanese-holiday.png"></a>
+          <div>python</div>
+          <div>pythonでgoogleのAPIを使って日本の祝日を取得するサンプル</div>
+        </div>
+        <div class="item">
+          <div>Portfolio</div>
+          <!-- <img src="https://placehold.jp/200x200.png"> -->
+          <a href="#"><img src="images/portfolio.png"></a>
+          <div>html, css</div>
+          <div>このサイトです。数年後に残ってる技術がわからないので、ライブラリ使わずに作ってます。</div>
+        </div>
+      </div>
+    </section>
 
-    <div class="detail-text">
-      過去 私はプログラマとして設計、開発、運用やツール作成などの業務を行ってきました。
-      特にコードの設計を重視しており、読みやすく、シンプルな設計になるようリファクタリングを試みております。その他に業務での 効率化のために自動化やメタプログラミングによるコード生成にも関心があります。
-      <div class="space"></div>
-      実際に会社で手動で行っていた作業を自動化したことで、約三分の一ほど時間の短縮になりました。
-      さらに手動によるミスを防ぎ、誰でもワンクリックで実行できるようになりました。
-      <div class="space"></div>
-      効率化したことで単純作業を減らし、別の作業や新しいアイディアに費やす時間を増やし、よりクリエイティブな作業に集中でき るよう心がけております。
-      <div class="space"></div>
-      上記の文章を修正して、今までゲーム開発でプログラミングをしていた〜。webでのゲーム開発もあり、webの技術などに興味がある〜うんぬん..
-    </div>
-  </section>
+    <section id="skills">
+      <div class="title-box">
+        <div class="text">SKILLS</div>
+        <div class="line"></div>
+      </div>
+      <div class="skills">
+        <div class="skill gradient-80 detail-text">Unity</div>
+        <div class="skill gradient-80 detail-text">C#</div>
+        <div class="skill gradient-60 detail-text">HTML<br>CSS<br>JavaScript</div>
+        <div class="skill gradient-60 detail-text">jQuery</div>
+        <div class="skill gradient-60 detail-text">Git</div>
+        <div class="skill gradient-60 detail-text">C++</div>
+        <div class="skill gradient-40 detail-text">Figma</div>
+        <div class="skill gradient-20 detail-text">Vue.js 3</div>
+        <div class="skill gradient-10 detail-text">PHP</div>
+        <div class="skill gradient-10 detail-text">Python</div>
+      </div>
+    </section>
 
-  <section id="history">
-    <div class="title-box">
-      <div class="text">HISTORY</div>
-      <div class="line"></div>
-    </div>
+    <section id="promotion">
+      <div class="title-box">
+        <div class="text">PROMOTION</div>
+        <div class="line"></div>
+      </div>
 
-    <pre class="detail-text">
-      - 2011/3  沖縄県立読谷高等学校 卒業
-      - 2011/4  東京ゲームデザイナー学院 ゲームクリエイター科 入学
-      - 2013/3  東京ゲームデザイナー学院 ゲームクリエイター科 卒業
-      - 2013/4  有限会社ガイズウェア 入社 (後に株式会社に変更)
-      - 2019/5  株式会社ガイズウェア 退職
-      - 2019/7  株式会社Artisan 入社
-      - 2023/12 株式会社Artisan 退職
-      - 2024/1  VESTA株式会社 入社
-      - 2024/7  VESTA株式会社 退職
-    </pre>
-  </section>
+      <div class="detail-text">
+        <p>過去 私はプログラマとして設計、開発、運用やツール作成などの業務を行ってきました。特にコードの設計を重視しており、読みやすく、シンプルな設計になるようリファクタリングを試みております。その他に業務での 効率化のために自動化やメタプログラミングによるコード生成にも関心があります。</p>
+        <p>実際に会社で手動で行っていた作業を自動化したことで、約三分の一ほど時間の短縮になりました。さらに手動によるミスを防ぎ、誰でもワンクリックで実行できるようになりました。</p>
+        <p>効率化したことで単純作業を減らし、別の作業や新しいアイディアに費やす時間を増やし、よりクリエイティブな作業に集中でき るよう心がけております。</p>
+        <p>上記の文章を修正して、今までゲーム開発でプログラミングをしていた〜。webでのゲーム開発もあり、webの技術などに興味がある〜うんぬん..</p>
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="title-box">
+        <div class="text">HISTORY</div>
+        <div class="line"></div>
+      </div>
+
+      <div class="detail-text">
+        <p>2011.3  高校卒業後、ゲームが好きでプログラマーに憧れ専門学校に入学</p>
+        <p>2013.4  株式会社ガイズウェアに入社。C++を使ったノベルゲーム開発に携わる。その他、落ちものゲームをブラウザで作成。(box2d, tmlib.js)</p>
+        <p>2019.7  株式会社Artisanに入社。Unity(C#)を使ったゲーム開発、ティラノスクリプトを使ったノベルゲーム開発を行い、独学がやっていたwebの経験を実践で活かせた。(html, css, jquery)</p>
+        <p>2024.1  VESTA株式会社に入社。この頃からコメダ珈琲で勉強する習慣を作り、好きなことやWebについて勉強していて、やりたくなりだした。</p>
+      </div>
+    </section>
+  </div>
 
   <footer>
     <a href="#">TOP</a>
