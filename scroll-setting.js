@@ -2,7 +2,6 @@ window.onload = () => {
     // スクロールアニメーション
     ScrollReveal().reveal('.aboutme', {
         duration: 800,
-        viewFactor: 0.2,
         reset: false,
         distance: '20%',
         scale: 1,
