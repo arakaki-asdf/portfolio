@@ -11,6 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>arakaki hayate Portfolio</title>
   <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="scroll-setting.js"></script>
 </head>
 
 <body>
@@ -21,53 +23,47 @@
       <a href="#promotion">PROMOTION</a>
       <a href="#history">HISTORY</a>
     </nav>
+
+    <div id="logo">
+      <img src="images/inu.jpg">
+    </div>
   </header>
 
-  <div id="logo">
-    <img src="images/inu.jpg" alt="">
-  </div>
-
-  <div class="content">
-    <div class="title-box">
-      <div class="text">PROFILE</div>
-      <div class="line"></div>
-    </div>
-    <section id="aboutme">
-      <img src="images/me.jpg">
-      <!-- <img src="https://placehold.jp/450x450.png"> -->
-      <div class="profile">
-        <!-- <div class="name">Arakaki Hayate</div>
-        <div class="line"></div> -->
-
-      <!-- <div class="title-box">
+  <main>
+    <section id="profile">
+      <div class="selection-title">
         <div class="text">PROFILE</div>
         <div class="line"></div>
-      </div> -->
-        <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum -->
-        <ul><li>新垣 颯(Arakaki Hayate)</li>
-          <li>沖縄出身 32歳</li>
-          <li>クライアントエンジニア (ゲームプログラマ)</li>
-          <li>趣味</li>
-          <ul>
-            <li>登山</li>
-            <li>散歩(モンスターハンターnow)</li>
-            <li>コメダ珈琲に通う</li>
+      </div>
+
+      <div class="aboutme">
+        <img src="images/me.jpg">
+        <div class="profile">
+          <ul><li>新垣 颯(Arakaki Hayate)</li>
+            <li>沖縄出身 32歳</li>
+            <li>クライアントエンジニア (ゲームプログラマ)</li>
+            <li>趣味</li>
+            <ul>
+              <li>登山</li>
+              <li>散歩(モンスターハンターnow)</li>
+              <li>コメダ珈琲に通う</li>
+            </ul>
           </ul>
-        </ul>
-        <div class="icons">
-          <a href="https://github.com/arakaki-asdf"><img class="icon" src="images/logos/github.svg"></a>
-          <a href="https://note.com/agile_bonobo9370/"><img class="icon" src="images/logos/note.svg"></a>
+          <div class="icons">
+            <a href="https://github.com/arakaki-asdf"><img class="icon" src="images/logos/github.svg"></a>
+            <a href="https://note.com/agile_bonobo9370/"><img class="icon" src="images/logos/note.svg"></a>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="production">
-      <div class="title-box">
+      <div class="selection-title">
         <div class="text">PRODUCTION</div>
         <div class="line"></div>
       </div>
 
-      <div class="production">
+      <div class="production-items">
         <div class="item">
           <div>ExcelAnalysis</div>
           <!-- <img src="https://placehold.jp/200x200.png"> -->
@@ -103,71 +99,61 @@
     </section>
 
     <section id="skills">
-      <div class="title-box">
+      <div class="selection-title">
         <div class="text">SKILLS</div>
         <div class="line"></div>
       </div>
       <div class="skills">
         <div class="skill">
           <img src="images/logos/html.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">プロジェクトで1年ほど使用。基本的な機能、id,class,カスタムデータ属性などを利用してゲームに活用。</div>
         </div>
         <div class="skill">
           <img src="images/logos/css.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">プロジェクトで1年ほど使用。gridを使ったレイアウトや、jQueryを利用して動的に画像、色変更などに活用。</div>
         </div>
         <div class="skill">
           <img src="images/logos/js.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">プロジェクトで1年ほど使用。その他electronでのアプリ作成でnode.jsのサーバーサイドjsも少し使用。</div>
         </div>
         <div class="skill">
           <img src="images/logos/cs.png">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">プロジェクト、ツール開発などで7年使用。主にUnityでのゲーム開発、エクセルデータ変換ツールなど。クラス化、継承、オブザーバーパターンなど利用。</div>
         </div>
         <div class="skill">
-          <img class="horizontal" src="images/logos/jquery.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <img src="images/logos/jquery.svg">
+          <div class="text">プロジェクトで１年ほど使用。基本的な機能など可能。</div>
         </div>
         <div class="skill">
           <img src="images/logos/git.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">プロジェクトで4年半ほど使用。基本的な機能など可能。主にVS Codeから操作してます。</div>
         </div>
         <div class="skill">
           <img src="images/logos/cp.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">プロジェクトで4年ほど使用。windowsゲーム開発やcocos-2dxなどで基本的な機能、クラス化、継承など可能。</div>
         </div>
         <div class="skill">
           <img src="images/logos/figma.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">個人で使用。ワイヤーフレームでのスタイル登録、コンポーネントなど修正などの機能を利用。</div>
         </div>
         <div class="skill">
           <img src="images/logos/vue.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">独学。実務経験なし。公式のチュートリアルで基礎を勉強中。
+          </div>
         </div>
         <div class="skill">
           <img src="images/logos/php.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">独学。実務経験なし。phpからget,post,CRUDなどを学び、パーフェクトPHPを読んでmvcフレームワークの流れを理解。</div>
         </div>
         <div class="skill">
           <img src="images/logos/python.svg">
-          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</div>
+          <div class="text">独学。実務経験なし。バッチファイルでは複雑になる処理をクラス化したり、ファイル処理などの自動化用に利用。他にもcsv読み込み、json出力など。</div>
         </div>
-
-        <!-- <div class="skill gradient-80 detail-text">Unity</div> -->
-        <!-- <div class="skill gradient-80 detail-text">C#</div>
-        <div class="skill gradient-60 detail-text">HTML<br>CSS<br>JavaScript</div>
-        <div class="skill gradient-60 detail-text">jQuery</div>
-        <div class="skill gradient-60 detail-text">Git</div>
-        <div class="skill gradient-60 detail-text">C++</div>
-        <div class="skill gradient-40 detail-text">Figma</div>
-        <div class="skill gradient-20 detail-text">Vue.js 3</div>
-        <div class="skill gradient-10 detail-text">PHP</div>
-        <div class="skill gradient-10 detail-text">Python</div> -->
       </div>
     </section>
 
     <section id="promotion">
-      <div class="title-box">
+      <div class="selection-title">
         <div class="text">PROMOTION</div>
         <div class="line"></div>
       </div>
@@ -181,7 +167,7 @@
     </section>
 
     <section id="history">
-      <div class="title-box">
+      <div class="selection-title">
         <div class="text">HISTORY</div>
         <div class="line"></div>
       </div>
@@ -193,12 +179,12 @@
         <p>2024.1  VESTA株式会社に入社。この頃からコメダ珈琲で勉強する習慣を作り、好きなことやWebについて勉強していて、やりたくなりだした。</p>
       </div>
     </section>
-  </div>
+  </main>
 
   <footer>
     <a href="#">TOP</a>
-    <p class="copyright faintly-text">&copy; 2024 Arakaki Hayate </p>
+    <p class="copyright">&copy; 2024 Arakaki Hayate</p>
   </footer>
-</body>
 
+</body>
 </html>
