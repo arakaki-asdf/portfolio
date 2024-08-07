@@ -6,7 +6,6 @@ window.onload = () => {
         distance: '20%',
         scale: 1,
         delay: 200,
-        opacity: 0,
         origin: 'bottom',
     });
 

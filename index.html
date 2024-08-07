@@ -1,15 +1,16 @@
 <!--
   参考URL
-  https://flat-goto-7145.zombie.jp/portfolio/
-  https://coliss.com/articles/build-websites/operation/css/css-grid-cheat-sheets.html
+  css grid                  https://coliss.com/articles/build-websites/operation/css/css-grid-cheat-sheets.html
+  スクロールアニメーション  https://nakox.jp/web/coding/js_animetion_scrollreveal
+  色                        https://hihayk.github.io/scale/#10/6/50/80/-51/67/20/14/1D9A6C/29/154/108/white
   -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>arakaki hayate Portfolio</title>
+  <title>Arakaki Hayate Portfolio</title>
   <link rel="stylesheet" href="style.css" type="text/css">
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="scroll-setting.js"></script>
@@ -39,7 +40,8 @@
       <div class="aboutme">
         <img src="images/me.jpg">
         <div class="profile">
-          <ul><li>新垣 颯(Arakaki Hayate)</li>
+          <ul>
+            <li>新垣 颯(Arakaki Hayate)</li>
             <li>沖縄出身 32歳</li>
             <li>クライアントエンジニア (ゲームプログラマ)</li>
             <li>趣味</li>
@@ -49,9 +51,14 @@
               <li>コメダ珈琲に通う</li>
             </ul>
           </ul>
+
           <div class="icons">
-            <a href="https://github.com/arakaki-asdf"><img class="icon" src="images/logos/github.svg"></a>
-            <a href="https://note.com/agile_bonobo9370/"><img class="icon" src="images/logos/note.svg"></a>
+            <a href="https://github.com/arakaki-asdf">
+              <img class="icon" src="images/logos/github.svg">
+            </a>
+            <a href="https://note.com/agile_bonobo9370/">
+              <img class="icon" src="images/logos/note.svg">
+            </a>
           </div>
         </div>
       </div>
@@ -66,18 +73,21 @@
       <div class="production-items">
         <div class="item">
           <div>ExcelAnalysis</div>
-          <!-- <img src="https://placehold.jp/200x200.png"> -->
           <a href="https://github.com/arakaki-asdf/ExcelAnalysis"><img src="images/productions/excel-analysis.png"></a>
           <div>C#</div>
-          <div>Excelからデータを解析し、JSON出力を行うツール</div>
+          <div>
+            ゲーム開発ではExcelのデータをそのままゲーム用に使うことがあるので、自作できるか試してみました。
+            C#でtomlの定義通りにデータがあるか解析し、JSON出力します。
+          </div>
         </div>
 
         <div class="item">
           <div>cocos2d-x-shooting-tutorial</div>
-          <!-- <img src="https://placehold.jp/200x200.png"> -->
           <a href="https://github.com/arakaki-asdf/cocos2d-x-shooting-tutorial"><img src="images/productions/cocos-shooting.png"></a>
           <div>C++</div>
-          <div>cocos2d-xを利用したシューティングゲームサンプル</div>
+          <div>
+            アウトプットを意識してインプットを行うと覚える効率が上がるため、cocos2d-xを覚えながらシューティングゲームのサンプルを作成しました。
+          </div>
         </div>
 
         <div class="item">
@@ -85,7 +95,7 @@
           <!-- <img src="https://placehold.jp/200x200.png"> -->
           <a href="https://github.com/arakaki-asdf/python-google-calendar"><img src="images/productions/python-japanese-holiday.png"></a>
           <div>python</div>
-          <div>pythonでgoogleのAPIを使って日本の祝日を取得するサンプル</div>
+          <div>祝日がいつか覚えてなかったのでpythonのコードで表示できないかと思い、googleのAPIを使って日本の祝日を表示してみました。</div>
         </div>
 
         <div class="item">
@@ -93,7 +103,7 @@
           <!-- <img src="https://placehold.jp/200x200.png"> -->
           <a href="#"><img src="images/productions/portfolio.png"></a>
           <div>html, css</div>
-          <div>このサイトです。数年後に残ってる技術がわからないので、ライブラリ使わずに作ってます。</div>
+          <div>このサイトです。ポートフォリオとして伝えたい情報を載せて、cssでのグリッドレイアウト、ネストでの記述、コンテナクエリなど使ってみました。</div>
         </div>
       </div>
     </section>
@@ -103,48 +113,54 @@
         <div class="text">SKILLS</div>
         <div class="line"></div>
       </div>
+
       <div class="skills">
         <div class="skill">
           <img src="images/logos/html.svg">
           <div class="text">プロジェクトで1年ほど使用。基本的な機能、id,class,カスタムデータ属性などを利用してゲームに活用。</div>
         </div>
+
         <div class="skill">
           <img src="images/logos/css.svg">
           <div class="text">プロジェクトで1年ほど使用。gridを使ったレイアウトや、jQueryを利用して動的に画像、色変更などに活用。</div>
         </div>
+
         <div class="skill">
           <img src="images/logos/js.svg">
-          <div class="text">プロジェクトで1年ほど使用。その他electronでのアプリ作成でnode.jsのサーバーサイドjsも少し使用。</div>
+          <div class="text">プロジェクトで1年ほど使用。jQueryを使った開発や、classやアロー関数、テンプレート文字列など活用。</div>
         </div>
+
         <div class="skill">
           <img src="images/logos/cs.png">
           <div class="text">プロジェクト、ツール開発などで7年使用。主にUnityでのゲーム開発、エクセルデータ変換ツールなど。クラス化、継承、オブザーバーパターンなど利用。</div>
         </div>
-        <div class="skill">
-          <img src="images/logos/jquery.svg">
-          <div class="text">プロジェクトで１年ほど使用。基本的な機能など可能。</div>
-        </div>
+
         <div class="skill">
           <img src="images/logos/git.svg">
-          <div class="text">プロジェクトで4年半ほど使用。基本的な機能など可能。主にVS Codeから操作してます。</div>
+          <div class="text">プロジェクトで4年半ほど使用。基本的な機能(commit, push, pull, merge)など。主にVS Codeで操作。</div>
         </div>
+
         <div class="skill">
           <img src="images/logos/cp.svg">
           <div class="text">プロジェクトで4年ほど使用。windowsゲーム開発やcocos-2dxなどで基本的な機能、クラス化、継承など可能。</div>
         </div>
+
         <div class="skill">
           <img src="images/logos/figma.svg">
-          <div class="text">個人で使用。ワイヤーフレームでのスタイル登録、コンポーネントなど修正などの機能を利用。</div>
+          <div class="text">個人で使用。ワイヤーフレームでのスタイル登録、コンポーネント化や自己紹介スライドなど作成。</div>
         </div>
+
         <div class="skill">
           <img src="images/logos/vue.svg">
           <div class="text">独学。実務経験なし。公式のチュートリアルで基礎を勉強中。
           </div>
         </div>
+
         <div class="skill">
           <img src="images/logos/php.svg">
-          <div class="text">独学。実務経験なし。phpからget,post,CRUDなどを学び、パーフェクトPHPを読んでmvcフレームワークの流れを理解。</div>
+          <div class="text">独学。実務経験なし。GET, POST, CRUDなどを学び、パーフェクトPHPを読んでmvcフレームワークの流れを勉強。</div>
         </div>
+
         <div class="skill">
           <img src="images/logos/python.svg">
           <div class="text">独学。実務経験なし。バッチファイルでは複雑になる処理をクラス化したり、ファイル処理などの自動化用に利用。他にもcsv読み込み、json出力など。</div>
@@ -159,10 +175,27 @@
       </div>
 
       <div class="detail-text">
-        <p>過去 私はプログラマとして設計、開発、運用やツール作成などの業務を行ってきました。特にコードの設計を重視しており、読みやすく、シンプルな設計になるようリファクタリングを試みております。その他に業務での 効率化のために自動化やメタプログラミングによるコード生成にも関心があります。</p>
-        <p>実際に会社で手動で行っていた作業を自動化したことで、約三分の一ほど時間の短縮になりました。さらに手動によるミスを防ぎ、誰でもワンクリックで実行できるようになりました。</p>
-        <p>効率化したことで単純作業を減らし、別の作業や新しいアイディアに費やす時間を増やし、よりクリエイティブな作業に集中でき るよう心がけております。</p>
-        <p>上記の文章を修正して、今までゲーム開発でプログラミングをしていた〜。webでのゲーム開発もあり、webの技術などに興味がある〜うんぬん..</p>
+        <p>
+          私の強みは問題解決能力と学ぶことです。
+        </p>
+        <p>
+          これまで11年間ゲームプログラマとしてプロジェクトに携わってきました。
+          問題が発生した場合、まずは詳しい人に確認するか、自ら調査を行い、問題解決に努めてきました。
+        </p>
+        <p>
+          プログラミングにおいては、大きなクラスや共通化されていない部分が後々修正を必要とすることがあります。
+          そこで、最初から小さな部品に分けて設計することを意識し、クラス化やコンポーネント化を進めることで、
+          問題を小さくし、理解・修正・変更を容易にしています。
+        </p>
+        <p>
+          また、新しい技術を学ぶことで、既存のコードをさらに簡略化し、可動性を高めることができました。
+          これにより、コードの理解がしやすくなり、メンテナンスも効率的に行えるようになりました。
+        </p>
+        <p>
+          この経験を活かし、新しい技術に対する理解を深めつつ、よりわかりやすく、読みやすいコードを
+          書くことを意識して取り組んでいきたいと考えています。また、問題が発生した際には、明確に分解し、
+          解決策を見つけていく姿勢で臨みます。
+        </p>
       </div>
     </section>
 
@@ -173,10 +206,10 @@
       </div>
 
       <div class="detail-text">
-        <p>2011.3  高校卒業後、ゲームが好きでプログラマーに憧れ専門学校に入学</p>
+        <p>2011.3  高校卒業後、ゲームが好きでプログラマになるため専門学校に入学</p>
         <p>2013.4  株式会社ガイズウェアに入社。C++を使ったノベルゲーム開発に携わる。その他、落ちものゲームをブラウザで作成。(box2d, tmlib.js)</p>
-        <p>2019.7  株式会社Artisanに入社。Unity(C#)を使ったゲーム開発、ティラノスクリプトを使ったノベルゲーム開発を行い、独学がやっていたwebの経験を実践で活かせた。(html, css, jquery)</p>
-        <p>2024.1  VESTA株式会社に入社。この頃からコメダ珈琲で勉強する習慣を作り、好きなことやWebについて勉強していて、やりたくなりだした。</p>
+        <p>2019.7  株式会社Artisanに入社。Unity(C#)を使ったゲーム開発、ティラノスクリプトを使ったノベルゲーム開発を行い、html, css, jqueryについてより深く学ぶことができた。</p>
+        <p>2024.1  VESTA株式会社に入社。この頃からコメダ珈琲で勉強する習慣を作り、好きなことやWebについて勉強していて、やってみたくなった。</p>
       </div>
     </section>
   </main>
@@ -185,6 +218,6 @@
     <a href="#">TOP</a>
     <p class="copyright">&copy; 2024 Arakaki Hayate</p>
   </footer>
-
 </body>
+
 </html>
