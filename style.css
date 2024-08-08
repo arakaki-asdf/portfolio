@@ -10,30 +10,20 @@
 }
 
 :root {
-    --font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    --font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", 'メイリオ', Meiryo, sans-serif;
     /* --font-family: "M PLUS Rounded 1c", Meiryo, sans-serif; */
-    --border: dashed 2px rgba(127, 127, 127, 0.5);
+    --sub-font-family: 'Helvetica', 'メイリオ', Meiryo, sans-serif;
 
     /* https://hihayk.github.io/scale/#10/6/50/80/-51/67/20/14/1D9A6C/29/154/108/white */
     --color-100: #0A2F51;
     --color-90: #0F5468;
-    --color-80: #137177;
+    /* --color-80: #137177; */
     --color-70: #147E7B;
     --color-60: #1D9A6C;
     /* --color-40: #74C67A; */
     /* --color-20: #BFE1B0; */
     /* --color-10: #DEEDCF; */
     --light-color: #D3D3D3;
-
-
-    /* https://pote-chil.com/css-stock/ja/pie-chart */
-    /* --gradient-80: radial-gradient(#fff 55%, transparent 55%), conic-gradient(var(--color-80) 80%, #f2f2f2 80% 100%);
-    --gradient-60: radial-gradient(#fff 55%, transparent 55%), conic-gradient(var(--color-60) 60%, #f2f2f2 60% 100%);
-    --gradient-40: radial-gradient(#fff 55%, transparent 55%), conic-gradient(var(--color-40) 40%, #f2f2f2 40% 100%);
-    --gradient-20: radial-gradient(#fff 55%, transparent 55%), conic-gradient(var(--color-20) 20%, #f2f2f2 20% 100%);
-    --gradient-10: radial-gradient(#fff 55%, transparent 55%), conic-gradient(var(--color-10) 10%, #f2f2f2 10% 100%); */
-
-    color: var(--color-100);
 }
 
 /* 選択範囲の色 */
@@ -47,8 +37,6 @@
     position: relative;
 
     > .text {
-        /* color: #515151; */
-        /* color: black; */
         color: var(--color-60);
         font-size: 30px;
         padding: 16px 0;
@@ -64,7 +52,6 @@
 
 /* 文章 */
 .detail-text {
-    color: var(--color80);
     font-size: 14px;
     font-weight: normal;
     max-width: 800px;
@@ -77,6 +64,7 @@ a:visited { color: var(--color-70); }
 
 html {
     scroll-behavior: smooth;
+    color: var(--color-100);
 }
 
 body {
@@ -99,7 +87,7 @@ header {
         gap: 12px;
         padding: 0 10px;
         justify-content: right;
-        font-family: 'Helvetica', '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+        font-family: var(--sub-font-family);
         font-size: 14px;
 
         > a {
@@ -111,7 +99,6 @@ header {
     > #logo {
         > img {
             width: 100%;
-            /* height: 50vh; */
             height: 400px;
 
             background: url(images/inu.jpg) center / cover;
@@ -132,7 +119,7 @@ footer {
     padding: 0 10px;
 
     > a {
-        font-family: 'Helvetica', '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
+        font-family: var(--sub-font-family);
         font-size: 14px;
     }
 
@@ -172,34 +159,22 @@ footer {
     > .aboutme {
         /* アニメーションで表示したいためhidden */
         visibility: hidden;
+
         display: grid;
-        /* position: relative; */
-        grid-template-columns: repeat(auto-fit, 300px);
-        /* grid-auto-flow: column; */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 300px));
         gap: 20px;
-        /* grid-auto-rows: 400px; */
-        /* width: 100%; */
-        /* width: 300px; */
-        /* place-content: center; */
         justify-content: space-evenly;
 
         /* https://yoncoichi.com/image-responsive/ */
         > img {
-            aspect-ratio: 585 / 624;
             width: 100%;
-            max-width: 400px;
-            height: 400px;
-            object-fit: cover;
             padding: 8px;
             border: solid 2px var(--color-90);
-            /* border-radius: 20px; */
-            box-sizing: border-box;
         }
 
         > .profile {
             display: grid;
-            grid-template-columns: repeat(auto-fit, auto);
-            grid-auto-flow: row;
+            grid-template-columns: repeat(auto-fit, 100%);
             align-content: space-between;
 
             ul {
