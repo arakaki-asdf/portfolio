@@ -192,15 +192,19 @@ footer {
 #production {
     > .production-items {
         display: grid;
-        grid-template-columns: repeat(auto-fit, 258px);
-        gap: 20px 20px;
-        grid-auto-rows: 380px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 258px));
+        gap: 40px 20px;
         justify-content: space-around;
 
         > .item {
             display: grid;
             align-items: center;
             justify-items: center;
+            gap: 8px 0;
+
+            > .title {
+                font-size: 20px;
+            }
 
             > a {
                 > img {
