@@ -1,0 +1,67 @@
+# .github/workflows/deploy.yml
+
+name: Deploy Vue.js to GitHub Pages
+# mainブランチにプッシュしたときに実行
+on:
+  push:
+    branches:
+      - main 
+  # GitHub Pagesの設定画面から手動で実行できるようにする
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 実行
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. リポジトリのチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # 2. Node.jsのセットアップ (Vueプロジェクトに必要な環境)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: 'npm'
+      
+      # 3. パッケージのインストール
+      - name: Install dependencies
+        run: npm install
+      
+      # 4. ビルドの実行
+      - name: Build project
+        run: npm run build 
+      
+      # 5. GitHub Pagesの設定（必須）
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      # 6. デプロイ成果物のアップロード
+      # ビルドされた dist/ の中身をデプロイ用の成果物としてアップロード
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # ★ビルド成果物（Vueの静的ファイル）があるディレクトリを指定
+          
+    # デプロイジョブへの出力を設定
+    outputs:
+      deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+
+  deploy:
+    environment:
+      name: github-pages # デプロイ環境として 'github-pages' を指定
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    # buildジョブが正常に完了した場合にのみ実行
+    needs: build
+    steps:
+      # 7. GitHub Pagesへのデプロイ
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
