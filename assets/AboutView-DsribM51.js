@@ -1,0 +1,1 @@
+import{_ as s,c as t,a as o,o as a}from"./index-CUCPPBtZ.js";const n={},r={class:"about"};function c(l,e){return a(),t("section",r,e[0]||(e[0]=[o("h1",null,"Aboue Me",-1),o("p",null,"Here you can write aboute yourself and your skills.",-1)]))}const _=s(n,[["render",c],["__scopeId","data-v-49e1db9d"]]);export{_ as default};
