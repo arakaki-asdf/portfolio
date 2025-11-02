@@ -2,74 +2,113 @@
   <section id="production">
     <div class="selection-title">
       <div class="text">PRODUCTION</div>
-      <div class="line"></div>
     </div>
 
     <div class="items">
-      <div class="item">
-        <div class="title">Card Roguelike</div>
-        <a href="https://arakaki-asdf.github.io/card-roguelike/"><img src="@/assets/images/productions/card-roguelike.png"></a>
-        <div>JavaScript, Phaser</div>
-        <div>
-          slay the spireというローグライクゲームが好きで、作ってみました。
-          こだわりは元のゲームをどれだけ再現できるかと、短期間で作れる範囲
-          でゲームとしてまとめたところです。
+      <template v-for="item in items">
+        <div class="item">
+          <div class="title"><a :href="item.url">{{ item.title }}</a></div>
+          <img :src="item.image">
+          <div class="types">
+            <template v-for="type in item.types">
+              <div class="type">{{ type }}</div>
+            </template>
+          </div>
+          <div>{{ item.description }}</div>
         </div>
-      </div>
-
-      <div class="item">
-        <div class="title">cocos2d-x-shooting-tutorial</div>
-        <a href="https://github.com/arakaki-asdf/cocos2d-x-shooting-tutorial"><img src="@/assets/images/productions/cocos-shooting.png"></a>
-        <div>C++</div>
-        <div>
-          cocos2d-x(js)ライブラリの仕組みを覚える際に、実際にシューティングゲームを作成しました。
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="title">python japanese holiday</div>
-        <!-- <img src="https://placehold.jp/200x200.png"> -->
-        <a href="https://github.com/arakaki-asdf/python-google-calendar"><img src="@/assets/images/productions/python-japanese-holiday.png"></a>
-        <div>Python</div>
-        <div>python+APIを利用して、日本の祝日を取得する機能を作ってみました。</div>
-      </div>
-
-      <div class="item">
-        <div class="title">Portfolio</div>
-        <!-- <img src="https://placehold.jp/200x200.png"> -->
-        <a href="https://github.com/arakaki-asdf/portfolio"><img src="@/assets/images/productions/portfolio.png"></a>
-        <div>HTML, CSS, JavaScript</div>
-        <div>このサイトです。github pagesを利用しました。cssのグリッドレイアウト、ネストでの記述、コンテナクエリなど使ってみました。</div>
-      </div>
+      </template>
     </div>
+
   </section>
 </template>
+
+<script setup>
+const items = [
+  {
+    title: "Card Roguelike",
+    url: "https://arakaki-asdf.github.io/card-roguelike/",
+    image: new URL('@/assets/images/productions/card-roguelike.png', import.meta.url).href,
+    types: ["JavaScript", "Phaser"],
+    description: `
+    slay the spireというローグライクゲームが好きで、作ってみました。
+    こだわりは元のゲームをどれだけ再現できるかと、短期間で作れる範囲
+    でゲームとしてまとめたところです。`,
+  },
+  {
+    title: "シューティングゲーム",
+    url: "https://github.com/arakaki-asdf/cocos2d-x-shooting-tutorial",
+    image: new URL('@/assets/images/productions/cocos-shooting.png', import.meta.url).href,
+    types: ["C++"],
+    description: "cocos2d-x(js)ライブラリの仕組みを覚える際に、実際にシューティングゲームを作成しました。",
+  },
+  {
+    title: "python japanese holiday",
+    url: "https://github.com/arakaki-asdf/python-google-calendar",
+    image: new URL('@/assets/images/productions/python-japanese-holiday.png', import.meta.url).href,
+    types: ["Python"],
+    description: "python+グーグルカレンダーAPIを利用して、日本の祝日を取得する機能を作ってみました。",
+  },
+  {
+    title: "Portfolio",
+    url: "https://github.com/arakaki-asdf/portfolio",
+    image: new URL('@/assets/images/productions/portfolio.png', import.meta.url).href,
+    types: ["HTML", "CSS", "Vue3", "GitHub Pages"],
+    description: "GitHub Pages + Vue3で作成しました。",
+  },
+]
+</script>
 
 <style scoped>
 #production {
   .items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 258px));
-    gap: 40px 20px;
+    grid-template-columns: repeat(2, minmax(200px, 300px));
+    gap: 40px;
     justify-content: space-around;
 
     .item {
-      display: grid;
-      align-items: center;
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
       gap: 8px 0;
 
       .title {
+        margin-bottom: 12px;
+
         font-size: 20px;
+        line-height: 1;
+        text-align: center;
       }
 
       a {
+        display: block;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: var(--accent-color);
+
         img {
-          width: 200px;
-          height: 200px;
+          width: 250px;
+          height: 250px;
           object-fit: cover;
         }
       }
+
+      .types {
+        display: flex;
+        gap: 0 12px;
+        .type {
+          /* padding: 4px; */
+          color: var(--color-70);
+        }
+      }
+
+    }
+  }
+}
+@media (max-width: 600px) {
+  #production {
+    .items {
+      grid-template-columns: repeat(1, minmax(200px, 400px));
     }
   }
 }

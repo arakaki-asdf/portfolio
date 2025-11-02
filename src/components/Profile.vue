@@ -1,9 +1,6 @@
 <template>
   <section id="profile">
-    <div class="selection-title">
-      <div class="text">PROFILE</div>
-      <div class="line"></div>
-    </div>
+    <div class="selection-title">PROFILE</div>
 
     <div class="aboutme">
       <img class="me" src="@/assets/images/me.jpg">

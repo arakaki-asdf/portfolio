@@ -1,6 +1,7 @@
 <template>
   <header>
     <nav>
+      <a href="#profile">PROFILE</a>
       <a href="#production">PRODUCTION</a>
       <a href="#skills">SKILLS</a>
       <a href="#promotion">PROMOTION</a>
@@ -23,7 +24,7 @@
 
   <footer>
     <a href="#">TOP</a>
-    <p class="copyright">&copy; 2025 Arakaki Hayate</p>
+    <p class="copyright">&copy; 2025 Hayate Arakaki</p>
   </footer>
 </template>
 
@@ -84,6 +85,8 @@ header {
   margin: 0;
 
   nav {
+    /* position: fixed; */
+    /* top: 0; right: 0; */
     display: grid;
     grid-auto-flow: column;
     gap: 12px;
@@ -92,6 +95,7 @@ header {
     font-family: var(--sub-font-family);
     font-size: 14px;
     /* margin-top: 2rem; */
+    /* z-index: 1000; */
 
     a {
       padding: 8px 0;
@@ -114,7 +118,7 @@ main {
   display: grid;
   justify-content: center;
   padding: 20px 10px;
-  gap: 40px 0;
+  gap: 64px 0;
 }
 
 footer {
@@ -135,6 +139,9 @@ footer {
 }
 
 @container (width < 700px) {
+  main {
+    gap: 40px 0;
+  }
   header {
     #logo {
       img {

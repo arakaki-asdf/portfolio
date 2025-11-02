@@ -21,6 +21,8 @@
   /* --color-20: #BFE1B0; */
   /* --color-10: #DEEDCF; */
   --light-color: #D3D3D3;
+  /* --accent-color: #F6ADC6; */
+  --accent-color: #eb9b34;
 }
 
 html {
@@ -54,7 +56,8 @@ a {
 
   &:link,
   &:visited {
-    color: var(--color-70);
+    /* color: var(--color-70); */
+    color: var(--accent-color);
   }
 }
 
@@ -64,21 +67,27 @@ a {
   background: var(--color-70);
 }
 
+section {
+  padding: 10px 0;
+}
+
 /* 共通タイトル */
 .selection-title {
   position: relative;
+  color: var(--color-60);
+  font-size: 30px;
+  padding-left: 0.5em;
+  margin-bottom: 20px;
 
-  >.text {
-    color: var(--color-60);
-    font-size: 30px;
-    padding: 16px 0;
-  }
-
-  >.line {
+  &::before {
+    content: "";
     position: absolute;
-    bottom: 18px;
-    width: 200px;
-    border-bottom: solid 2px var(--color-90);
+    display: block;
+    left: 0;
+    top: 0;
+    width: 0.3em;
+    height: 100%;
+    background-color: var(--color-90);
   }
 }
 
