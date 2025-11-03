@@ -7,7 +7,7 @@
       <div class="status">
         <ul>
           <li>新垣 颯(Arakaki Hayate)</li>
-          <li>沖縄出身 33歳</li>
+          <li>33歳</li>
           <li>コーダー/ゲームプログラマ</li>
           <li>趣味</li>
           <ul>

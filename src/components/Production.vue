@@ -31,15 +31,14 @@ const items = [
     types: ["JavaScript", "Phaser"],
     description: `
     slay the spireというローグライクゲームが好きで、作ってみました。
-    こだわりは元のゲームをどれだけ再現できるかと、短期間で作れる範囲
-    でゲームとしてまとめたところです。`,
+    元のゲームをどれだけ再現できるかを重視しました。`,
   },
   {
     title: "シューティングゲーム",
     url: "https://github.com/arakaki-asdf/cocos2d-x-shooting-tutorial",
     image: new URL('@/assets/images/productions/cocos-shooting.png', import.meta.url).href,
-    types: ["C++"],
-    description: "cocos2d-x(js)ライブラリの仕組みを覚える際に、実際にシューティングゲームを作成しました。",
+    types: ["C++", "Cocos2d-x"],
+    description: "Cocos2d-xライブラリの仕組みを覚える際に、実際にシューティングゲームを作成しました。",
   },
   {
     title: "python japanese holiday",
