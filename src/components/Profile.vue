@@ -21,9 +21,9 @@
           <a href="https://github.com/arakaki-asdf">
             <img class="icon" src="@/assets/images/logos/github.svg">
           </a>
-          <a href="https://note.com/agile_bonobo9370/">
+          <!-- <a href="https://note.com/agile_bonobo9370/">
             <img class="icon" src="@/assets/images/logos/note.svg">
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
