@@ -15,10 +15,10 @@
         </div>
       </div>
       <div class="skill">
-        <div class="title">Vue.js</div>
+        <div class="title">Vue.js, TypeScript</div>
         <div class="text">
-          Webフロントエンド開発において１年以上のVue.jsを用いた開発経験。
-          htmlからvue3への移行、コンポーネント化など行いました。
+          Webフロントエンド開発において１年以上のVue.js+TypeScriptを用いた開発経験。
+          HTMLからvue3への移行、コンポーネント化など行いました。
         </div>
       </div>
       <div class="skill">
@@ -38,7 +38,7 @@
       <div class="skill">
         <div class="title">C#</div>
         <div class="text">
-          ゲーム開発のプロジェクトにて6年C#を用いた開発経験。<br>
+          ゲーム開発のプロジェクトにて5年C#を用いた開発経験。<br>
           Unityでのゲームロジック、UI開発、API連携の実装など行いました。<br>
           また、Windows フォームアプリを用いたツールの作成経験も豊富です。
         </div>
@@ -46,7 +46,7 @@
       <div class="skill">
         <div class="title">C++</div>
         <div class="text">
-          ゲーム開発のプロジェクトで3年ほど使用。<br></br>
+          ゲーム開発のプロジェクトで6年ほど使用。<br></br>
           ノベルゲーム開発でのコマンド実装、演出のフェードアニメーションや
           RenderTexture, sharderを使用したポストエフェクトを実装、Cocos2d-xでのゲーム開発。
         </div>
@@ -72,7 +72,6 @@
       padding-bottom: 16px;
       border-bottom: 1px solid #d2d2d2;
     }
-
   }
 }
 </style>

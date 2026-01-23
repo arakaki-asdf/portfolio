@@ -7,8 +7,10 @@
     <div class="items">
       <template v-for="item in items">
         <div class="item">
-          <div class="title"><a :href="item.url">{{ item.title }}</a></div>
-          <img :src="item.image">
+          <div class="title">{{ item.title }}</div>
+          <a class="float-card" :href="item.url">
+            <img :src="item.image">
+          </a>
           <div class="types">
             <template v-for="type in item.types">
               <div class="type">{{ type }}</div>
@@ -101,6 +103,21 @@ const items = [
         }
       }
 
+      .float-card {
+        display: inline-block;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          border-radius: 8px;
+        }
+      }
     }
   }
 }
@@ -108,6 +125,7 @@ const items = [
   #production {
     .items {
       grid-template-columns: repeat(1, minmax(200px, 400px));
+
     }
   }
 }
